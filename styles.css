@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -41,12 +43,12 @@ nav > a {
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
+  color: #23314D;
 }
 
 .title-screen  > h1 {
   font-size: 4rem;
   margin-top: 30vh;
-  color: rgb(26, 30, 41);
 }
 
 .title-screen > span {
@@ -142,11 +144,16 @@ nav > a {
 }
 
 .about-me-container > p {
-  margin: 20px;
   color: white;
   line-height: 1.8rem;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   text-align: center;
+}
+
+.about-me-container > p:first-child {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 40px;
 }
 
 .skills > div {
@@ -158,15 +165,12 @@ nav > a {
   padding: 40px;
   line-height: 1.4rem;
   border: 1px solid rgba(201, 201, 201, 0.5);
-}
-
-.skills h2,
-.skills span {
-  color: rgb(26, 30, 41);
+  font-weight: bold;
 }
 
 .skills h2 {
   font-size: 2.2rem;
+  color: #23314D;
 }
 
 .skills-container {
@@ -181,7 +185,10 @@ nav > a {
   position: relative;
   display: flex;
   justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
   transition: transform .5s;
+  border: 2px solid rgba(201, 201, 201, 0.3);
 }
 
 .skills-container img {
@@ -224,6 +231,9 @@ nav > a {
 }
 
 .project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 30px 20px;
 }
 
@@ -233,18 +243,14 @@ nav > a {
   gap: 10px
 }
 
-.project-info > p {
-  margin: 8px 0px 16px 0px;
+.project-links {
+  align-self: flex-end;
+  margin: auto 0px 0px 0px;
 }
 
-.project-info img {
+.project-links img {
   width: 32px;
   height: 32px;
-}
-
-.project-info a:first-of-type {
-  margin-top: 35%;
-  margin-left: 68%;
 }
 
 .html, .css, .javascript, .react {
@@ -288,6 +294,7 @@ nav > a {
   margin-top: -130px;
   padding: 40px 60px;
   border-radius: 12px;
+  text-align: center;
   background-color: #23314D;
   color: white;
 }
@@ -306,4 +313,48 @@ nav > a {
   display: block;
   height: 48px;
   width: 48px;
+}
+
+.contact > a:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-bottom: 5px solid #23314D;
+}
+
+@media (max-width: 900px) {
+
+  .star:nth-child(2) {
+    animation: none;
+  }
+
+  .star:nth-child(6) {
+    animation: none;
+  }
+
+  .about-me-container > p {
+    margin: 0px 12px;
+  }
+
+  .project {
+    flex-direction: column;
+    max-width: 500px;
+  }
+  
+  .contact {
+    gap: 30px;
+    padding: 40px 30px;
+  }
+
+  .contact > a {
+    font-size: 1.5rem;
+  }
+
+  .contact > a::after {
+    right: -35px;
+    height: 24px;
+    width: 24px;
+  }
+  
 }
